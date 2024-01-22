@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('console_id')->constrained();
+            $table->string('name');
+            $table->string('description');
+            $table->string('franquice');
+            $table->string('developer');
+            $table->string('publisher');
+            $table->string('genere');
+            $table->string('theme');
+            $table->string('clasification');
+            $table->string('type');
+            $table->string('image');
             $table->timestamps();
         });
     }

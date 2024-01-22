@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('consoles', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained(table: 'users');
+            $table->string('name');
+            $table->string('manufacturer');
+            $table->date('release_date');
             $table->timestamps();
         });
     }
