@@ -1,0 +1,1 @@
+<?php /**PATH /home/vagrant/code/videogame-gestion/resources/views/console/index.blade.php ENDPATH**/ ?>
