@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('tags');
             $table->string('times_played');
             $table->date('date_completed');
-            $table->date('time_of_completion');
+            $table->integer('time_of_completion');
+            $table->string('notes');
             $table->boolean('have_it');
             $table->boolean('played');
             $table->boolean('playing');

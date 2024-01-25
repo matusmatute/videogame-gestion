@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('franquice');
             $table->string('developer');
             $table->string('publisher');
+            $table->string('release_date');
             $table->string('genere');
             $table->string('theme');
             $table->string('clasification');

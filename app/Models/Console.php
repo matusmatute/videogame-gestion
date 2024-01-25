@@ -15,8 +15,8 @@ class Console extends Model
         return $this->hasMany(Game::class);
     }
 
-    public function console(){
-        return $this->belongsTo(Console::class);
+    public function user(){
+        return $this->belongsTo(User::class);
 
     }
 
