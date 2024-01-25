@@ -13,6 +13,7 @@ class ConsoleController extends Controller
     public function index()
     {
         //
+        return view('console.index', ['consoles' => Console::all()]);
     }
 
     /**
@@ -21,6 +22,7 @@ class ConsoleController extends Controller
     public function create()
     {
         //
+        return view('console.create');
     }
 
     /**
@@ -29,6 +31,20 @@ class ConsoleController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'name' => 'required',   
+            'manufacturer' => 'required',
+            'release_date' => 'required',
+        ]);
+
+        $console = new Console();
+        $console->user_id = auth()->user()->id;
+        $console->name = $request->name;
+        $console->manufacturer = $request->manufacturer;
+        $console->release_date = $request->release_date;
+        $console->save();
+        return redirect()->route('console.index')->with('success', 'Console created successfully.');
+        
     }
 
     /**

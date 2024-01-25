@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('console', App\Http\Controllers\ConsoleController::class)
+->except(['show'])
+->middleware('auth');
+
+Route::resource('game', App\Http\Controllers\GameController::class)
+->middleware('auth')
+->except(['show']);
+
+Route::resource('metadata', App\Http\Controllers\MetadataController::class)
+->middleware('auth')
+->except(['show']);
+
+
+Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
