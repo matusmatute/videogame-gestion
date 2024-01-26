@@ -34,7 +34,9 @@ Route::resource('metadata', App\Http\Controllers\MetadataController::class)
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', function () {
+    return view('dashboard');
+})->name('dashboard');
 
 Route::middleware([
     'auth:sanctum',
