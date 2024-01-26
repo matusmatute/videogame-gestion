@@ -2,7 +2,7 @@
     <div class="flex items-center justify-center h-screen">
         <div class="bg-white dark:bg-gray-800 p-8 rounded shadow-md">
             <h2 class="text-2xl font-semibold mb-6">Add Metadata</h2>
-            <form action="<?php echo e(route('metadata.store')); ?>" method="POST">
+            <form action="<?php echo e(route('metadata.store')); ?>" method="POST" enctype="multipart/form-data">
                 <?php echo csrf_field(); ?>
                 <div class="mb-4">
                     <label for="game_id" class="block text-sm font-medium text-gray-700">Game</label>

@@ -42,9 +42,7 @@ class MetadataController extends Controller
             'times_played' => 'required',
             'date_completed' => 'required',
             'time_of_completion' => 'required',
-            'have_it' => 'required',
-            'played' => 'required',
-            'playing' => 'required',
+            
         ]);
 
         $metadata = new Metadata();
